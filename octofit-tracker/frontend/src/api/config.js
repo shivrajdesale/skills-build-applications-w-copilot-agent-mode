@@ -5,13 +5,16 @@
 
 export const getApiBaseUrl = () => {
   const codespaceName = import.meta.env.VITE_CODESPACE_NAME;
+  console.log('***** Detected Codespace Name:', codespaceName); // Debug log for
   
+   
+
   if (codespaceName && codespaceName !== 'undefined') {
     return `https://${codespaceName}-8000.app.github.dev/api`;
   }
   
   // Fallback to localhost for local development
-  return 'http://localhost:8000/api';
+  return 'https://shiny-garbanzo-vpwq4r6gvgcp9r4-8000.app.github.dev/api';
 };
 
 export const makeApiRequest = async (endpoint) => {

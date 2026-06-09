@@ -1,5 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import apiRoutes from './apiRoutes';
+import cors from 'cors'; // 1. Import CORS
 import { connectToDatabase, getMongoUri } from './config/database';
 
 const app: Express = express();
@@ -8,6 +9,11 @@ const CODESPACE_NAME = process.env.CODESPACE_NAME;
 const BASE_API_URL = CODESPACE_NAME
   ? `https://${CODESPACE_NAME}-8000.app.github.dev`
   : `http://localhost:${PORT}`;
+
+app.use(cors({
+  origin: '*', 
+  credentials: true
+}));
 
 // Middleware
 app.use(express.json());

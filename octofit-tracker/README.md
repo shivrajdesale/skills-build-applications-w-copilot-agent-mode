@@ -8,7 +8,7 @@ A modern multi-tier fitness tracking application with user authentication, activ
 octofit-tracker/
 ├── backend/          # Express + TypeScript server
 │   ├── src/
-│   │   └── index.ts  # Main server entry point
+│   │   └── server.ts  # Main server entry point
 │   ├── package.json
 │   └── tsconfig.json
 └── frontend/         # React 19 + Vite client
